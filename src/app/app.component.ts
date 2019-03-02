@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PwaService } from './services/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'teste-pwa';
+  title = 'Install PWA DOIS';
+
+  constructor(public Pwa: PwaService) {}
+
+  installPwa(): void {
+    this.Pwa.promptEvent.prompt();
+  }
 }
